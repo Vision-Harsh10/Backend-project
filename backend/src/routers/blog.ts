@@ -29,7 +29,7 @@ blogRouter.use(async (c, next) => {
 	await next()
 });
 
-blogRouter.get('/', async (c) => {
+blogRouter.post('/', async (c) => {
 	const userId = c.get('userId');
 	const prisma = new PrismaClient({
 		datasourceUrl: c.env?.DATABASE_URL	,
